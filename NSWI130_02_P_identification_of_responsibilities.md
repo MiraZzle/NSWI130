@@ -279,12 +279,6 @@ As a teacher, I want to view my schedule with all the classes and practicals I a
 - Generate an exportable file (e.g., CSV, ICS) or API call for calendar systems.
 - Confirm the export was successful.
 
----
-
-Certainly! Here's the entire **Subject Creation** section:
-
----
-
 ### Feature: Subject creation
 
 As a teacher, I want to create a subject that I am going to teach, so it can be included in the schedule generation. This applies to optional subjects that don’t have to be taught. As the scheduling committee, I want to automatically generate subjects that must be taught according to the study plans of specializations.
