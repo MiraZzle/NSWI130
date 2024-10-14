@@ -95,12 +95,12 @@ As a teacher, I want to edit/add preferences before the schedule is finalized by
 
 #### Feature breakdown
 
-- The teacher accesses their dashboard to set or edit scheduling preferences.
-- The system allows teachers to select their available time slots (depending on the school schedule, e.g., 8:00 - 9:30).
-- The system allows teachers to choose specific courses they want to teach.
-- The system saves teacher preferences for later access by the scheduling committee and shows them visualization.
-- The system provides conflict resolution suggestions (if multiple teachers prefer the same time slots or the schedule doesn't work for students).
-- The final schedule generation will take teacher preferences into account wherever possible.
+1. The teacher accesses their dashboard to set or edit scheduling preferences.
+2. The system allows teachers to select their available time slots (depending on the school schedule, e.g., 8:00 - 9:30).
+3. The system allows teachers to choose specific courses they want to teach.
+4. The system saves teacher preferences for later access by the scheduling committee and shows them visualization.
+5. The system provides conflict resolution suggestions (if multiple teachers prefer the same time slots or the schedule doesn't work for students).
+6. The final schedule generation will take teacher preferences into account wherever possible.
 
 #### Responsibilities
 
