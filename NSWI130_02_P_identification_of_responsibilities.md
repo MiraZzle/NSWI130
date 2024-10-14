@@ -34,29 +34,29 @@ As a committee, I must be able to automatically generate schedules so that I can
 - Allow for a batch upload of some or all criteria via a .CSV file.
 - Give the option to fill data fields with old stored data.
 
-##### Validating data entry responsibilities
+##### Validating data entry
 
 - Check the format.
 - Check the data for missing or incorrect information (like duplicate courses or non-existent rooms).
 
-##### Finding inconsistencies responsibilities
+##### Finding inconsistencies
 
 - Temporarily maintain the data while highlighting fields with issues.
 - Display clear messages with guidance for correction.
 - Show potential fixes (e.g., if a teacher is missing, show all existing teachers, or if the lectures are incorrect, show the historically working ones).
 
-##### Finding no inconsistencies responsibilities
+##### Finding no inconsistencies
 
 - Create a data log for future reference (who entered the data, when).
 - Save the data in a secure database and with correct formatting for further use.
 
-##### Adjusting settings responsibilities
+##### Adjusting settings
 
 - Provide options for strategies from a pre-set list (prioritizing lectures over practicals, optimizing room capacities, optimizing energy savings, prioritizing a day off for everyone).
 - Provide the option to set the number of schedules to be generated.
 - Allow for manual tweaking using embedded code.
 
-##### Running the algorithm responsibilities
+##### Running the algorithm
 
 - Parse, structure, and normalize the input data.
 - Create a schedule matrix and assign courses.
@@ -64,28 +64,28 @@ As a committee, I must be able to automatically generate schedules so that I can
 - Do further schedule optimization.
 - Validate the schedules (another core feature).
 
-##### Running into issues responsibilities
+##### Running into issues
 
 - Log any conflicts or errors in a readable format.
 - Offer options like retrying the algorithm again, going back to data inputs, or changing the settings.
 
-##### Successful algorithm responsibilities
+##### Successful algorithm
 
 - Store all generated schedules along with associated logs (timestamps, inputs used, settings used).
 - Display the schedules with options (calendar view, weekly schedule breakdown, room schedule).
 - Show potential problems with all schedules.
 - Show scores given to the schedules by the algorithm.
 
-##### Post-generation activities responsibilities
+##### Post-generation activities
 
 - Show options for readable formats to download the schedules.
 - Show options for notifying students and teachers and crafting a message.
 - Offer a modification process (handled by another feature).
 
-##### Updating the dashboard responsibilities
+##### Updating the dashboard
 
 - Show the generated schedules with their summaries.
-- Allow easy options for re-running the algorithm, viewing the schedules, or editing them.
+- Allow easy options for re-running the algorithm, viewing the schedules, or editing them (handled by another feature); basically the previous page.
 
 ---
 
