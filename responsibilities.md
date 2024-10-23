@@ -30,7 +30,7 @@
 - Validate the selected year and semester (B)
 
 # Showing schedules
-- Notify about new scheduls (P)
+- Notify about new schedules (P)
 - Show schedule (P)
 - Filter the schedule by day/week (P)
 - Show details for each subject (P)
