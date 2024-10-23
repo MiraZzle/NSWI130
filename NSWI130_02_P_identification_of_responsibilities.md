@@ -34,29 +34,29 @@ As a committee, I must be able to automatically generate schedules so that I can
 - Allow for a batch upload of some or all criteria via a .CSV file.
 - Give the option to fill data fields with old stored data.
 
-##### Validating data entry responsibilities
+##### Validating data entry
 
 - Check the format.
 - Check the data for missing or incorrect information (like duplicate courses or non-existent rooms).
 
-##### Finding inconsistencies responsibilities
+##### Finding inconsistencies
 
 - Temporarily maintain the data while highlighting fields with issues.
 - Display clear messages with guidance for correction.
 - Show potential fixes (e.g., if a teacher is missing, show all existing teachers, or if the lectures are incorrect, show the historically working ones).
 
-##### Finding no inconsistencies responsibilities
+##### Finding no inconsistencies
 
 - Create a data log for future reference (who entered the data, when).
 - Save the data in a secure database and with correct formatting for further use.
 
-##### Adjusting settings responsibilities
+##### Adjusting settings
 
 - Provide options for strategies from a pre-set list (prioritizing lectures over practicals, optimizing room capacities, optimizing energy savings, prioritizing a day off for everyone).
 - Provide the option to set the number of schedules to be generated.
 - Allow for manual tweaking using embedded code.
 
-##### Running the algorithm responsibilities
+##### Running the algorithm
 
 - Parse, structure, and normalize the input data.
 - Create a schedule matrix and assign courses.
@@ -64,28 +64,28 @@ As a committee, I must be able to automatically generate schedules so that I can
 - Do further schedule optimization.
 - Validate the schedules (another core feature).
 
-##### Running into issues responsibilities
+##### Running into issues
 
 - Log any conflicts or errors in a readable format.
 - Offer options like retrying the algorithm again, going back to data inputs, or changing the settings.
 
-##### Successful algorithm responsibilities
+##### Successful algorithm
 
 - Store all generated schedules along with associated logs (timestamps, inputs used, settings used).
 - Display the schedules with options (calendar view, weekly schedule breakdown, room schedule).
 - Show potential problems with all schedules.
 - Show scores given to the schedules by the algorithm.
 
-##### Post-generation activities responsibilities
+##### Post-generation activities
 
 - Show options for readable formats to download the schedules.
 - Show options for notifying students and teachers and crafting a message.
 - Offer a modification process (handled by another feature).
 
-##### Updating the dashboard responsibilities
+##### Updating the dashboard
 
 - Show the generated schedules with their summaries.
-- Allow easy options for re-running the algorithm, viewing the schedules, or editing them.
+- Allow easy options for re-running the algorithm, viewing the schedules, or editing them (handled by another feature); basically the previous page.
 
 ---
 
@@ -95,40 +95,40 @@ As a teacher, I want to edit/add preferences before the schedule is finalized by
 
 #### Feature breakdown
 
-- The teacher accesses their dashboard to set or edit scheduling preferences.
-- The system allows teachers to select their available time slots (depending on the school schedule, e.g., 8:00 - 9:30).
-- The system allows teachers to choose specific courses they want to teach.
-- The system saves teacher preferences for later access by the scheduling committee and shows them visualization.
-- The system provides conflict resolution suggestions (if multiple teachers prefer the same time slots or the schedule doesn't work for students).
-- The final schedule generation will take teacher preferences into account wherever possible.
+1. The teacher accesses their dashboard to set or edit scheduling preferences.
+2. The system allows teachers to select their available time slots (depending on the school schedule, e.g., 8:00 - 9:30).
+3. The system allows teachers to choose specific courses they want to teach.
+4. The system saves teacher preferences for later access by the scheduling committee and shows them visualization.
+5. The system provides conflict resolution suggestions (if multiple teachers prefer the same time slots or the schedule doesn't work for students).
+6. The final schedule generation will take teacher preferences into account whenever possible.
 
 #### Responsibilities
 
-##### Preference Data Collection responsibilities
+##### Preference Data Collection
 
 - Provide an interface for teachers to select available time slots.
 - Allow teachers to assign themselves to specific courses they are qualified to teach.
 - Validate and store the input data (ensure preferences are valid).
 
-##### Scheduling Committee responsibilities
+##### Scheduling Committee
 
 - Provide the committee access to the collected preferences.
 - Allow the committee to review, adjust, or approve the final class schedule.
 - Offer automated conflict resolution suggestions.
 
-##### Conflict Detection responsibilities
+##### Conflict Detection
 
 - Identify overlapping or conflicting preferences (e.g., two teachers choosing the same course or time).
 - Suggest alternative time slots or distribute courses to other teachers based on availability.
 - Allow teachers and the committee to resolve conflicts manually if needed.
 
-##### Preference Storage responsibilities
+##### Preference Storage
 
 - Store the teacher preferences in a database.
 - Allow teachers to revisit and edit their preferences until some scheduling deadline.
 - Ensure the system logs any changes to the preferences and alerts the scheduling committee of updates.
 
-##### Schedule Visualization responsibilities
+##### Schedule Visualization
 
 - Highlight conflicts between teacher preferences (e.g., two teachers want the same time and room).
 - Display the possible final schedule to teachers.
@@ -137,7 +137,7 @@ As a teacher, I want to edit/add preferences before the schedule is finalized by
 
 ### Feature: Validating schedules
 
-As a scheduling committee, I want to manually validate any schedule so that I may be notified if the schedule breaks any rules (e.g., room overlaps, time conflicts, instructor availability).
+As the scheduling committee, I want to be able to manually validate any schedule so that I may be notified if the schedule breaks any rules (e.g., room overlaps, time conflicts, instructor availability).
 
 #### Feature breakdown
 
@@ -150,24 +150,24 @@ As a scheduling committee, I want to manually validate any schedule so that I ma
 
 #### Responsibilities
 
-##### Schedule collection responsibilities
+##### Schedule collection
 
 - Ensure schedules are stored in a centralized database.
 - Schedules should be accessible and easily viewable through a user-friendly interface.
 
-##### Validation responsibilities
+##### Validation
 
 - Implement a rule engine for checking schedule conflicts (e.g., overlapping rooms, instructor availability).
 - Validate schedule constraints based on defined rules (e.g., time slots, resource allocation).
 - Generate a detailed validation report.
 
-##### Error notification responsibilities
+##### Error notification
 
 - Detect and display rule violations during the validation process.
 - Notify the SC member of any issues via the dashboard and email notifications.
 - Provide actionable error messages for easy resolution of conflicts.
 
-##### Reporting and logging responsibilities
+##### Reporting and logging
 
 - Generate a detailed report of validation results, highlighting conflicts and suggested resolutions.
 - Log validation activities and results for recovery purposes.
@@ -181,34 +181,57 @@ As a student, I want to view my schedule with all my chosen subjects and see the
 
 #### Feature breakdown
 
-1. The student has already enrolled in all the necessary courses (prerequisite).
-2. The system fetches the student's enrolled courses from the database.
-3. The system displays the schedule with all necessary details in an organized manner.
-4. If a course is updated (time, building, room), the schedule reflects this change automatically.
-5. The student is notified when there is any change in the schedule.
+1. The student is signed in and on the dashboard.
+2. The student clicks on the “My Schedule” button.
+3. The system shows a schedule overview for the current week.
+4. The student can switch between daily and weekly views.
+   - a) If the student selects the **Daily View**, the system shows all classes for the current day.
+   - b) If the student selects the **Weekly View**, the system shows the schedule for the current week.
+5. The student can choose the year and semester.
+   - The student chooses the year.
+   - The student chooses the semester.
+   - The system shows the schedule for the chosen year and semester.
+6. The student can click on any class block for details.
+   - The system shows the class details (time, location, subject information).
+7. The student can filter the schedule by subject, room, or lecture.
+8. The student can export the schedule to an external calendar like Google Calendar or Outlook.
+9. If a class is updated (time, building, room), the schedule reflects this change automatically.
+10. The student is notified when there is any change in the schedule.
 
 #### Responsibilities
 
-##### Data collection responsibilities
+##### Data collection
 
 - Retrieve the list of the student's enrolled courses from the database.
 - Ensure that each course’s details (time, building, room) are updated in the system.
 - Validate that the retrieved data is correct and matches the student's current enrollments.
 
-##### Schedule presentation responsibilities
+##### Schedule presentation
 
 - Format the schedule to be user-friendly and visually organized.
-- Enable students to filter their schedule by date, as there can be lessons that only happen once in a fortnight.
+- Enable students to view their schedule in a daily or weekly view
 
-##### Data update responsibilities
+##### Data update
 
 - Automatically update the schedule when course details change (time, room, etc.).
 - Notify the student of any schedule updates or changes, such as room changes or cancellations.
 
-##### Notification responsibilities
+##### Notification
 
 - Provide reminders or alerts for upcoming classes (optional).
-- Allow students to set reminders through the system or link the schedule to an external calendar.
+- Allow students to set reminders through the system.
+
+##### Filtering
+
+- Provide filter options for subject, room, lecture, or practical.
+- Apply filters to the schedule and update the display based on user input.
+- Ensure filters work for both daily and weekly views.
+
+##### Calendar export
+
+- Provide an export button on the schedule interface.
+- Generate an exportable file (e.g., CSV, ICS) or API call for calendar systems.
+- Confirm the export was successful.
 
 ---
 
@@ -229,31 +252,29 @@ As a teacher, I want to view my schedule with all the classes and practicals I a
    - 2. The teacher chooses the semester.
    - 3. The system shows the schedule for the chosen year and semester.
 6. The teacher can click on any class block for details.
-   - The system shows the class details (time, location, subject information
-
-). 7. The teacher can filter the schedule by subject, room, lecture, or practical. 8. The teacher can export the schedule to an external calendar like Google Calendar or Outlook.
+   - The system shows the class details (time, location, subject information). 7. The teacher can filter the schedule by subject, room, lecture, or practical. 8. The teacher can export the schedule to an external calendar like Google Calendar or Outlook.
 
 #### Responsibilities
 
-##### Navigation responsibilities
+##### Navigation
 
 - Capture click events on the “My Schedule” button.
 - Redirect the teacher to the full schedule view.
 - Load the appropriate schedule (daily or weekly) based on preferences.
 
-##### Schedule rendering responsibilities
+##### Schedule rendering
 
 - Retrieve the weekly schedule for the teacher.
 - Organize classes and events into a grid format by day and time.
 - Ensure correct labeling of subjects, lecture or practical, and locations.
 
-##### View toggling responsibilities
+##### View toggling
 
 - Provide toggle functionality for switching between daily and weekly views.
 - Refresh the schedule based on the selected view.
 - Maintain the current day or week when switching views.
 
-##### Year and semester selection responsibilities
+##### Year and semester selection
 
 - Provide options for selecting the year.
 - Provide options for selecting the semester.
@@ -261,19 +282,19 @@ As a teacher, I want to view my schedule with all the classes and practicals I a
 - Ensure available year and semester options are accurate and up-to-date.
 - Fetch and display the schedule for the chosen year and semester.
 
-##### Class details retrieval responsibilities
+##### Class details retrieval
 
 - Capture click events on class blocks.
 - Fetch detailed class information such as course title, time, location, and resources.
 - Display the information in a pop-up or side panel.
 
-##### Filtering responsibilities
+##### Filtering
 
 - Provide filter options for subject, room, lecture, or practical.
 - Apply filters to the schedule and update the display based on user input.
 - Ensure filters work for both daily and weekly views.
 
-##### Calendar export responsibilities
+##### Calendar export
 
 - Provide an export button on the schedule interface.
 - Generate an exportable file (e.g., CSV, ICS) or API call for calendar systems.
