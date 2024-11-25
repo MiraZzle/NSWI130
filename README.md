@@ -15,4 +15,4 @@
 
 ## Popis systému
 
-Naším úkolem byla tvorba modulu rovzrhů (schedules). 
+Naším úkolem byla tvorba modulu rovzrhů (schedules).
