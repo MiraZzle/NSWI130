@@ -185,7 +185,4 @@
     - **Stimulus:** Suspicious requests hit the Enrollment Controller, attempting to bypass input validation.
     - **Response:** The system includes a **Web Application Firewall (WAF)** at the entry point of the system, specifically in front of the API Gateway (SIS App API), to filter and block malicious requests before they reach the Enrollment Controller or other services.  
     - **Response Measure:** 100% of known attack patterns are blocked, with alerts raised to the security team in real-time, and no data is compromised.
-    | **Change**               | **Description**                                                                                  |
-    |--------------------------|--------------------------------------------------------------------------------------------------|
-    | Add Web Application Firewall (WAF) | Place a WAF at the API Gateway (SIS App API) level to filter malicious requests before they reach backend systems. |  
 ---
