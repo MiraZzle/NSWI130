@@ -68,6 +68,14 @@
 
 1. **Database High Availability**
     - Both the **Enrollment Database** and **Log Database** must support replication and failover mechanisms.
+  
+2. **Viewing of statistics not denied by Enrollment part failure** - **FAILED**
+   - **Context:** During the high intensity enrollment the demand is higher than expected and some part of the Enrollment system fails or is very slow to respond, when this happends the enrollment statistics are usefull to have more data to immediatelly adress the issue, this data can be needed by computer (for automatic scalling) or human.
+    - **Stimulus:** A system operator or the system itself wants to get the .
+    - **Response:** Because viewing and computation from the statistics is isolated from the logic that saves them the ability to get these statistics is not hindered by the slowness or failure of the Enrollment application part.
+    - **Response Measure:** There should be **0s** or no downtime to get the statistics when the Enrollment is overrequested.
+    - **Current architecture status:** The application architecure does not have the viewing of statistics split from their saving and the Enrollment logic which makes ugetting the needed data hard when the enrollment part is under problems.
+    - **New architecture should solve the problem** - The logic of viewing and computing statistics and even the resources used for it should be in a separate container from the Enrollment logic and saving of the statistics data. So a simple Statistics Output Controller should be added together which will run in a different container and will take care of statistics output requests.
 
 ---
 
