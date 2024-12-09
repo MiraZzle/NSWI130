@@ -11,7 +11,7 @@
 1. **Scenario: Updating Enrollment Validation Rules** - **PASSED**
 
     - **Context:** A new academic policy requires changing the criteria for course prerequisites.
-    - **Stimulus:** A developer modifies the enrollment validation logic in the "Enrollment Provider" without affecting other components.
+    - **Stimulus:** A developer modifies the enrollment validation logic in the "Course Enrollment Provider [Container], Enrollment Validator [Component]" without affecting other components.
     - **Response:** Due to modular architecture and well-defined APIs, the change is isolated to the validator logic. Automated tests confirm the new rule and no other areas are impacted.
     - **Response Measure:** The code change and tests are completed within **2 working days** with no regressions detected in adjacent functionalities.
     - **Current architecture status:** The application architecure is prepared for this by having the Enrollment Validator isolated.
