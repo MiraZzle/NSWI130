@@ -129,11 +129,12 @@
 
 #### Jirka Zelenka
 
-2. **Scenario: High-Frequency Batch Enrollment**
+2. **Scenario: High-Frequency Batch Enrollment** - **PASSED**
     - **Context:** During late registration, large batches of enrollment requests are submitted simultaneously.
     - **Stimulus:** A surge of requests hits the "Enrollment Controller" over a short period (e.g., 1,000 requests in 1 minute).
     - **Response:** The system scales horizontally, leveraging load balancing and microservice replicas to handle the burst. Caching and asynchronous processing ensure throughput.
     - **Response Measure:** The system maintains an average response time ≤ **700ms** under peak load, with no request timeouts.
+        - The system uses kubernetes (in their documentation) so scaling should be taken care of
 
 ---
 
@@ -161,12 +162,12 @@
 
 #### Jirka Zelenka
 
-1. **Scenario: Peak Enrollment Period**
+1. **Scenario: Peak Enrollment Period** - **PASSED**
     - **Context:** At the start of a new semester, enrollment requests triple due to incoming students.
     - **Stimulus:** Traffic surges significantly over a short period.
     - **Response:** The system automatically scales additional Enrollment Controller and Provider instances. Horizontal scaling and load balancing maintain performance.
     - **Response Measure:** Under triple normal load, the system sustains response times ≤ **700ms**, with no downtime.
-
+        - The system uses kubernetes (in their documentation) so scaling should be taken care of
 ---
 
 ## **Security**
