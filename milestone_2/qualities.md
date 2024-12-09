@@ -110,8 +110,8 @@
     - **Stimulus:** A developer wants to make the enrollment statistics data available for another sytem.
     - **Response:** Because viewing and computation from the statistics is isolated from the logic that saves them this only requires changes in the statistics output part of the application, where this new system can be easily authenticated to get the data.8
     - **Response Measure:** The adding and testing of this feature should take the developer less than **10 hours**
-    - **Current architecture status:** The application architecure does not have the viewing of statistics split from their saving and the Enrollment logic which makes adding such a requirment much harder. Also how this should even be done is unclear from the architecture.
-    - **New architecture should solve the problem** - The logic of viewing and computing statistics and even the resources used for it should be in a separate container from the Enrollment logic and saving of the statistics data. So a simple Statistics Output Controller should be added together which will run in a different container and will take care of statistics output requests.
+    - **Current architecture status:** The application architecure does not have the viewing of statistics split from their saving and the Enrollment logic which makes adding such a requirment much harder. Also how this should even be done is unclear from the architecture should we call the Enrollment Controller or some SIS API as shown in the statistics L3 diagram.
+    - **New architecture should solve the problem** - The logic of viewing and computing statistics and even the resources used for it should be in a separate container from the Enrollment logic and saving of the statistics data. So a Statistics Output Controller should be in the Statistics Provider container with Analytical Computing component to get the computed statistics and will take care of statistics output requests. The enrollment itself or the Logger provider can take care of saving the statistics into the statistics database.
 
 ---
 
@@ -154,7 +154,7 @@
     - **Response:** Because viewing and computation from the statistics is isolated from the logic that saves them the ability to get these statistics is not hindered by the slowness or failure of the Enrollment application part.
     - **Response Measure:** There should be **0s** or no downtime to get the statistics when the Enrollment is overrequested.
     - **Current architecture status:** The application architecure does not have the viewing of statistics split from their saving and the Enrollment logic which makes ugetting the needed data hard when the enrollment part is under problems.
-    - **New architecture should solve the problem** - The logic of viewing and computing statistics and even the resources used for it should be in a separate container from the Enrollment logic and saving of the statistics data. So a simple Statistics Output Controller should be added together which will run in a different container and will take care of statistics output requests.
+    - **New architecture should solve the problem** - The logic of viewing and computing statistics and even the resources used for it should be in a separate container from the Enrollment logic and saving of the statistics data. So a Statistics Output Controller should be in the Statistics Provider container with Analytical Computing component to get the computed statistics and will take care of statistics output requests. The enrollment itself or the Logger provider can take care of saving the statistics into the statistics database.
 
 ---
 
