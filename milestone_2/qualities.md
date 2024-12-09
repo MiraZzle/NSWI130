@@ -25,6 +25,22 @@
     - **Response Measure:** The registration of the new call should be done under **1 hour**, this does not include the programing time of the logic of the call which can vary depending on the requirement and is not relevant here.
     - **Current architecture status:** The current application architecture doesn't have a single point of communication, which makes this impossible and makes adding API requests a much harder and time demanding task. (We are assuming the SIS component includes the frontend which makes the calls)
     - **New architecture to solve the problem** - The Enrollment Controler and Communication provider should be one container which should solely take care of the outside communication, the Course Enrollment Provider should also only communicate with the Enrollment Provider and not with the frontend directly.
+  
+#### Dominik Mészáros
+
+3. ### Course Enrollment Provider external system API
+    #### Artifact
+    - **Course Enrollment Provider**
+    #### What is the source of modifiability and why?
+    - Integration with an external learning management system (LMS) (Elements of AI...) or APIs that provide course updates dynamically. As institutions adopt third-party tools for managing course details, this integration might become essential so people can simply enroll through
+    external courses and get ECTS credits.
+    #### This component will need to be modified because
+    - It will require API adapters to fetch and validate course details from external sources rather than relying on internal storage.
+    #### Outcome of this modifiability and time estimated
+    - Add a service interface for external integrations, supporting extensibility for new LMS.
+    #### Estimate:
+    - **4–6 man-weeks**
+        - including collaboration with LMS providers and rigorous testing
 
 ---
 
@@ -38,6 +54,50 @@
     - **Response:** A testing database image is prepared with prepared courses for enrollment and student accounts. The request and their sending is also prepared so the tester only setups the right app configuration and can launch the tests with one button click. He can also see the analytics and logs of what was happening in the system.
     - **Response Measure:** The testing shouldn't take the tester longer than **8 hours** including the data analysis and performance test itself should take less than **40 minutes** because it might require a sheduled maintenance service unavailability to prevent poor user experience during the test.
     - **Current architecture status:** The application architecure is prepared for this kind of testing because only the databases need to be swapped and the performance can be tested.
+
+#### Dominik Mészáros
+
+2. ### Course Enrollment Provider’s high-load handling.
+    - Real-Time Conflict Resolution
+    #### Artifact
+    - **Course Enrollment Provider**
+    #### Stimulus
+    - Concurrent enrollment requests are processed under high load conditions.
+    #### Source of Stimulus
+    - Tester simulates multiple students attempting concurrent enrollment in courses with limited seats.
+    #### Environment
+    - Simulated high-traffic test environment with many enrollment requests.
+    #### Response:
+    - Conflicts (e.g., exceeding capacity) are identified correctly, quickly, and enrollments are queued or rejected. Performance metrics (e.g., response time) are logged.
+    #### Measurement:
+    - **Effort**: Automated performance and concurrency testing tools integrated.
+    - **Coverage**: All edge cases of many requests (e.g., many people try to enroll to one course which will be soon full).
+    - **Observability**: Metrics and logs highlight issues like race conditions or bottlenecks.
+    #### Estimate:
+    - **4 man-weeks**
+        - of rigorous testing
+
+3. ### Role-Specific Workflow Handling
+    #### Artifact
+    - **Course Enrollment Provider**
+    #### Stimulus:
+    - Test enrollment tasks requiring advisor approval or admin overrides.
+    #### Source of Stimulus:
+    - Tester configures roles such as student, advisor, or admin, and tests their respective workflows.
+    #### Artifact:
+    - **Course Enrollment Provider**
+        - Workflow logic and role authorization mechanisms in the CEP.
+    #### Environment:
+    - Role-based test accounts in a controlled test environment.
+    #### Response:
+    - The system validates role permissions and produces consistent outcomes for each role.
+    #### Measurement:
+    - **Effort**: Simple test case creation for role-based scenarios.
+    - **Coverage**: Validation of all role workflows.
+    - **Observability**: Role-specific logs and workflow traces facilitate debugging.
+    #### Estimate:
+    - **5 man-weeks**
+        - of rigorous testing of edge-cases
 
 ---
 
