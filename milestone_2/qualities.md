@@ -151,7 +151,7 @@
    - **Stimulus:** A surge of requests hits the "Enrollment Controller" over a short period (e.g., 1,000 requests in 1 minute).
    - **Response:** The system scales horizontally, leveraging load balancing and microservice replicas to handle the burst. Caching and asynchronous processing ensure throughput.
    - **Response Measure:** The system maintains an average response time ≤ **700ms** under peak load, with no request timeouts.
-     - The system uses kubernetes (in their documentation) so scaling should be taken care of
+     - The system uses kubernetes (in their documentation) so load balancing should be taken care of
 
 ---
 
