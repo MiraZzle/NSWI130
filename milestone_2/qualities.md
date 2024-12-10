@@ -2,7 +2,7 @@
 
 # Design-Time attributes
 
-    >= n/2 [modifiability, testability, interoperability]
+    >= n/2 (at least 3) [modifiability, testability, interoperability]
 
 ## **Modifiability**
 
@@ -86,6 +86,8 @@
     - **Current architecture status:** The application architecture supports high-load handling with proper conflict resolution mechanisms.
     - **Estimate:** **4 man-weeks** of rigorous testing.
 
+#### Dominik Mészáros
+
 2. ### Role-Specific Workflow Handling
     #### Artifact
     - **Course Enrollment Provider**
@@ -126,7 +128,7 @@
 
 # Run-Time attributes
 
-    <= 3* (n/2) [performance, availability, scalability, security]
+    <= 3*(n/2) (at most 9) [performance, availability, scalability, security]
 
 ## **Performance**
 
@@ -144,8 +146,7 @@
     - **Context:** During late registration, large batches of enrollment requests are submitted simultaneously.
     - **Stimulus:** A surge of requests hits the "Enrollment Controller" over a short period (e.g., 1,000 requests in 1 minute).
     - **Response:** The system scales horizontally, leveraging load balancing and microservice replicas to handle the burst. Caching and asynchronous processing ensure throughput.
-    - **Response Measure:** The system maintains an average response time ≤ **700ms** under peak load, with no request timeouts.
-        - The system uses kubernetes (in their documentation) so load balancing should be taken care of
+    - **Response Measure:** The system maintains an average response time ≤ **700ms** under peak load, with no request timeouts. The system uses kubernetes (in their documentation) so load balancing should be taken care of.
 
 ---
 
@@ -179,8 +180,7 @@
     - **Context:** At the start of a new semester, enrollment requests triple due to incoming students.
     - **Stimulus:** Traffic surges significantly over a short period.
     - **Response:** The system automatically scales additional Enrollment Controller and Provider instances. Horizontal scaling and load balancing maintain performance.
-    - **Response Measure:** Under triple normal load, the system sustains response times ≤ **700ms**, with no downtime.
-        - The system uses kubernetes (in their documentation) so scaling should be taken care of
+    - **Response Measure:** Under triple normal load, the system sustains response times ≤ **700ms**, with no downtime. The system uses kubernetes (in their documentation) so scaling should be taken care of.
 
 ---
 
@@ -201,5 +201,3 @@
     - **Stimulus:** Suspicious requests hit the Enrollment Controller, attempting to bypass input validation.
     - **Response:** The system includes a **Web Application Firewall (WAF)** at the entry point of the system, specifically in front of the API Gateway (SIS App API), to filter and block malicious requests before they reach the Enrollment Controller or other services.
     - **Response Measure:** 100% of known attack patterns are blocked, with alerts raised to the security team in real-time, and no data is compromised.
-
----
