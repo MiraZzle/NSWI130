@@ -2,7 +2,8 @@
 
 ## Téma
 
-- Schedules (SCH)
+- **1. Milestone:** Schedules (SCH)
+- **2. Milestone:** Enrollments (ENR)
 
 ## Členové týmu:
 
@@ -15,4 +16,4 @@
 
 ## Popis systému
 
-Naším úkolem byla tvorba modulu rovzrhů (schedules).
+Naším úkolem byla tvorba modulu rozvrhů (schedules). Ve druhé části projektu jsme se zaměřili na hodnocení a úpravu existující architektury pro zápis (enrollments).
