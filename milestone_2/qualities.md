@@ -160,7 +160,7 @@
     - **Response:** The system automatically fails over to a replica database, ensuring uninterrupted service.
     - **Response Measure:** Failover occurs within a few **seconds**, with no noticeable impact on UX.
 
-#### Ladislav Nagy
+#### Ladislav Nagy (Jirka Zelenka)
 
 2. **Viewing of statistics not denied by Enrollment part failure** - **FAILED**
     - **Context:** During the high intensity enrollment the demand is higher than expected and some part of the Enrollment system fails or is very slow to respond, when this happends the enrollment statistics are usefull to have more data to immediatelly adress the issue, this data can be needed by computer (for automatic scalling) or human.
