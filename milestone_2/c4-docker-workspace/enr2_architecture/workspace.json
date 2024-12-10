@@ -4,7 +4,7 @@
   "documentation" : { },
   "id" : 1,
   "lastModifiedAgent" : "structurizr-ui",
-  "lastModifiedDate" : "2024-12-09T21:45:35Z",
+  "lastModifiedDate" : "2024-12-10T09:49:33Z",
   "model" : {
     "deploymentNodes" : [ {
       "children" : [ {
@@ -53,7 +53,7 @@
         "instances" : "1",
         "name" : "Enrollment controller contrainer",
         "properties" : {
-          "structurizr.dsl.identifier" : "2b5b2395-a12c-4b09-a1aa-2943d102e535"
+          "structurizr.dsl.identifier" : "c46afb4e-c3d0-4972-b303-e3e92a911af2"
         },
         "tags" : "Element,Deployment Node",
         "technology" : "Docker"
@@ -82,7 +82,7 @@
         "instances" : "1",
         "name" : "Enrollment provider contrainer",
         "properties" : {
-          "structurizr.dsl.identifier" : "659718ca-3072-4897-8802-8f5763dbc7f7"
+          "structurizr.dsl.identifier" : "45a4a100-35f1-4c3a-b1c3-9aeaf74a158a"
         },
         "tags" : "Element,Deployment Node",
         "technology" : "Docker"
@@ -111,7 +111,7 @@
         "instances" : "1",
         "name" : "Statistics provider contrainer",
         "properties" : {
-          "structurizr.dsl.identifier" : "f9a14624-511e-450e-ae13-27e622d59c17"
+          "structurizr.dsl.identifier" : "d65a2a72-84ec-4fa3-8ee6-46fb6de01528"
         },
         "tags" : "Element,Deployment Node",
         "technology" : "Docker"
@@ -132,7 +132,7 @@
         "instances" : "1",
         "name" : "Messaging provider contrainer",
         "properties" : {
-          "structurizr.dsl.identifier" : "e2e18508-ec3d-4651-b748-d8e71378e454"
+          "structurizr.dsl.identifier" : "5153482d-6e89-45fa-b30b-4b5292f05810"
         },
         "tags" : "Element,Deployment Node",
         "technology" : "Docker"
@@ -161,7 +161,7 @@
         "instances" : "1",
         "name" : "Logging provider contrainer",
         "properties" : {
-          "structurizr.dsl.identifier" : "9fde1a2e-ddae-479b-a342-ca6a5751f5d3"
+          "structurizr.dsl.identifier" : "8d847d1b-4e19-4ad5-ab51-c56feec5d5d4"
         },
         "tags" : "Element,Deployment Node",
         "technology" : "Docker"
@@ -171,7 +171,7 @@
       "instances" : "1",
       "name" : "Kubernetes cluster - ENR Server",
       "properties" : {
-        "structurizr.dsl.identifier" : "88335aa3-20f3-467d-bab6-8b2c56d6fdb6"
+        "structurizr.dsl.identifier" : "084a39e8-ff8f-47ef-9b64-8a0acefdfbcc"
       },
       "tags" : "Element,Deployment Node",
       "technology" : "Kubernetes"
@@ -202,7 +202,7 @@
       "instances" : "1",
       "name" : "Database Server",
       "properties" : {
-        "structurizr.dsl.identifier" : "2ab1748c-b728-4098-b93e-53e4a42a5bcc"
+        "structurizr.dsl.identifier" : "2cbea7c5-2bb6-4304-8d61-d8a77f7d4e06"
       },
       "tags" : "Element,Deployment Node",
       "technology" : "PostgreSQL"
@@ -223,7 +223,7 @@
       "instances" : "1",
       "name" : "Kibana Server",
       "properties" : {
-        "structurizr.dsl.identifier" : "e4c0fdca-509a-40c2-a698-d9e912608894"
+        "structurizr.dsl.identifier" : "d31b09db-fe2d-4027-9782-4b3315df01e1"
       },
       "tags" : "Element,Deployment Node",
       "technology" : "Elasticsearch"
@@ -274,7 +274,7 @@
         "instances" : "1",
         "name" : "Enrollment controller contrainer",
         "properties" : {
-          "structurizr.dsl.identifier" : "7fa013a7-ed7d-46e3-93ec-3eb10f0387d8"
+          "structurizr.dsl.identifier" : "d475ba43-a69d-4b9a-a729-f51dfa951e96"
         },
         "tags" : "Element,Deployment Node",
         "technology" : "Docker"
@@ -303,7 +303,7 @@
         "instances" : "1",
         "name" : "Enrollment provider contrainer",
         "properties" : {
-          "structurizr.dsl.identifier" : "130e7f50-dfbc-4517-8473-f1aaeb384316"
+          "structurizr.dsl.identifier" : "2bf21af6-771b-4f8f-b936-b7c44ad3a6ee"
         },
         "tags" : "Element,Deployment Node",
         "technology" : "Docker"
@@ -332,7 +332,7 @@
         "instances" : "1",
         "name" : "Statistics provider contrainer",
         "properties" : {
-          "structurizr.dsl.identifier" : "e608a2cd-0c97-4a75-8547-2eea5d4d15c5"
+          "structurizr.dsl.identifier" : "2fe475a3-47c6-4873-98ea-afd6447a98c3"
         },
         "tags" : "Element,Deployment Node",
         "technology" : "Docker"
@@ -353,7 +353,7 @@
         "instances" : "1",
         "name" : "Messaging provider contrainer",
         "properties" : {
-          "structurizr.dsl.identifier" : "16f77859-ed37-4c82-a19b-e8177ac3297e"
+          "structurizr.dsl.identifier" : "9a7f4e33-9cc6-43c3-850d-73cbacfba9f3"
         },
         "tags" : "Element,Deployment Node",
         "technology" : "Docker"
@@ -382,7 +382,7 @@
         "instances" : "1",
         "name" : "Logging provider contrainer",
         "properties" : {
-          "structurizr.dsl.identifier" : "8debde21-98e2-4fbc-8d92-45f1af1c19c7"
+          "structurizr.dsl.identifier" : "fbc00abf-e509-4dc8-ae8c-9ade538b8bb1"
         },
         "tags" : "Element,Deployment Node",
         "technology" : "Docker"
@@ -392,7 +392,7 @@
       "instances" : "1",
       "name" : "Kubernetes cluster - ENR Server",
       "properties" : {
-        "structurizr.dsl.identifier" : "109f3f35-559d-4d6b-ab85-c77762af226d"
+        "structurizr.dsl.identifier" : "c62a156c-45bb-4bce-9907-3e3c440a0da5"
       },
       "tags" : "Element,Deployment Node",
       "technology" : "Kubernetes"
@@ -423,7 +423,7 @@
       "instances" : "1",
       "name" : "Database Database",
       "properties" : {
-        "structurizr.dsl.identifier" : "13e4f51f-001c-410b-8cde-acf42391dad2"
+        "structurizr.dsl.identifier" : "bd804012-ba48-40b2-9eb0-5b188b7c3ab9"
       },
       "tags" : "Element,Deployment Node",
       "technology" : "PostgreSQL"
@@ -444,7 +444,7 @@
       "instances" : "1",
       "name" : "Kibana Server",
       "properties" : {
-        "structurizr.dsl.identifier" : "29e107de-3043-4b06-b0cd-68c1d543c9f0"
+        "structurizr.dsl.identifier" : "1cd5a97f-7417-4b82-a184-2212bfa8e7a5"
       },
       "tags" : "Element,Deployment Node",
       "technology" : "Elasticsearch"
@@ -1346,7 +1346,7 @@
     } ],
     "configuration" : {
       "branding" : { },
-      "lastSavedView" : "L2_SIS",
+      "lastSavedView" : "ENRDevelopmentDeployment",
       "metadataSymbols" : "SquareBrackets",
       "styles" : {
         "elements" : [ {
@@ -1735,7 +1735,7 @@
         "relationships" : [ "135" ]
       } ],
       "automaticLayout" : {
-        "applied" : true,
+        "applied" : false,
         "edgeSeparation" : 0,
         "implementation" : "Graphviz",
         "nodeSeparation" : 300,
@@ -1744,107 +1744,88 @@
         "vertices" : false
       },
       "description" : "Deployment diagram for ENR in Production environment.",
-      "dimensions" : {
-        "height" : 3256,
-        "width" : 2456
-      },
       "elements" : [ {
         "id" : "113",
-        "x" : 175,
-        "y" : 175
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "114",
-        "x" : 175,
-        "y" : 175
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "115",
-        "x" : 239,
-        "y" : 1113
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "116",
-        "x" : 175,
-        "y" : 175
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "117",
-        "x" : 989,
-        "y" : 2029
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "119",
-        "x" : 175,
-        "y" : 175
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "120",
-        "x" : 989,
-        "y" : 1417
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "122",
-        "x" : 175,
-        "y" : 175
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "123",
-        "x" : 989,
-        "y" : 804
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "125",
-        "x" : 175,
-        "y" : 175
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "126",
-        "x" : 989,
-        "y" : 192
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "128",
-        "x" : 175,
-        "y" : 175
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "129",
-        "x" : 1785,
-        "y" : 2017
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "131",
-        "x" : 1785,
-        "y" : 1417
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "133",
-        "x" : 175,
-        "y" : 175
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "134",
-        "x" : 1785,
-        "y" : 2617
+        "x" : 0,
+        "y" : 0
       } ],
       "environment" : "Production",
       "key" : "ENRProductionDeployment",
       "order" : 14,
       "relationships" : [ {
-        "id" : "118",
-        "vertices" : [ {
-          "x" : 885,
-          "y" : 1896
-        } ]
+        "id" : "118"
       }, {
         "id" : "121"
       }, {
         "id" : "124"
       }, {
-        "id" : "127",
-        "vertices" : [ {
-          "x" : 885,
-          "y" : 625
-        } ]
+        "id" : "127"
       }, {
         "id" : "130"
       }, {
         "id" : "132"
       }, {
-        "id" : "135",
-        "vertices" : [ {
-          "x" : 1647,
-          "y" : 625
-        }, {
-          "x" : 1681,
-          "y" : 2496
-        } ]
+        "id" : "135"
       } ],
       "softwareSystemId" : "9"
     } ],
