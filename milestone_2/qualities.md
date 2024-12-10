@@ -77,42 +77,16 @@
 
 #### Dominik Mészáros
 
-2. ### Course Enrollment Provider’s high-load handling.
+1. **Scenario: Course Enrollment Provider’s High-Load Handling** - **PASSED**
 
-    - Real-Time Conflict Resolution
+    - **Context:** Concurrent enrollment requests are processed under high load conditions.
+    - **Stimulus:** Tester simulates multiple students attempting concurrent enrollment in courses with limited seats.
+    - **Response:** Conflicts (e.g., exceeding capacity) are identified correctly, quickly, and enrollments are queued or rejected. Performance metrics (e.g., response time) are logged.
+    - **Response Measure:** Automated performance and concurrency testing tools integrated. All edge cases of many requests (e.g., many people try to enroll in one course which will be soon full) are covered. Metrics and logs highlight issues like race conditions or bottlenecks.
+    - **Current architecture status:** The application architecture supports high-load handling with proper conflict resolution mechanisms.
+    - **Estimate:** **4 man-weeks** of rigorous testing.
 
-    #### Artifact
-
-    - **Course Enrollment Provider**
-
-    #### Stimulus
-
-    - Concurrent enrollment requests are processed under high load conditions.
-
-    #### Source of Stimulus
-
-    - Tester simulates multiple students attempting concurrent enrollment in courses with limited seats.
-
-    #### Environment
-
-    - Simulated high-traffic test environment with many enrollment requests.
-
-    #### Response:
-
-    - Conflicts (e.g., exceeding capacity) are identified correctly, quickly, and enrollments are queued or rejected. Performance metrics (e.g., response time) are logged.
-
-    #### Measurement:
-
-    - **Effort**: Automated performance and concurrency testing tools integrated.
-    - **Coverage**: All edge cases of many requests (e.g., many people try to enroll to one course which will be soon full).
-    - **Observability**: Metrics and logs highlight issues like race conditions or bottlenecks.
-
-    #### Estimate:
-
-    - **4 man-weeks**
-        - of rigorous testing
-
-3. ### Role-Specific Workflow Handling
+2. ### Role-Specific Workflow Handling
     #### Artifact
     - **Course Enrollment Provider**
     #### Stimulus:
