@@ -30,7 +30,7 @@
 
 #### Pavel Kubát
 
-3. **Scenario: Adding a New Messaging Protocol (e.g., SMS or Push Notifications) - **PASSED**
+3. **Scenario: Adding a New Messaging Protocol (e.g., SMS or Push Notifications)** - **PASSED**
     - **Context:** A new requirement necessitates support for sending messages through SMS or push notifications in addition to emails.
     - **Stimulus:** A developer adds an adapter to the Message Creator and Message Scheduler for the new protocol.
     - **Response:** Due to the modular design of the Communication Provider, new protocols are added as separate modules with minimal changes to the existing components.
