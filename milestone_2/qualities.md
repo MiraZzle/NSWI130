@@ -25,13 +25,12 @@
     - **Response:** Because application has one entry point where new API call can be easilly registered the developer can easily program the call logic separately and only register the call in one place.
     - **Response Measure:** The registration of the new call should be done under **1 hour**, this does not include the programing time of the logic of the call which can vary depending on the requirement and is not relevant here.
     - **Current architecture status:** The current application architecture doesn't have a single point of communication, which makes this impossible and makes adding API requests a much harder and time demanding task. (We are assuming the SIS component includes the frontend which makes the calls)
-    - **New architecture to solve the problem** - The Enrollment Controler should solely take care of the outside communication, the Course Enrollment Provider should also only communicate with the Enrollment Provider and not with the frontend directly. **The new C4 diagram** can be found in the presentation
-
-## **Modifiability**
+    - **New architecture to solve the problem** - The Enrollment Controler should solely take care of the outside communication, the Course Enrollment Provider should also only communicate with the Enrollment Provider and not with the frontend directly.
+    - **The new C4 diagram** can be found in the presentation
 
 #### Pavel Kubát
 
-1. **Scenario: Adding a New Messaging Protocol (e.g., SMS or Push Notifications) - **PASSED**
+3. **Scenario: Adding a New Messaging Protocol (e.g., SMS or Push Notifications) - **PASSED**
     - **Context:** A new requirement necessitates support for sending messages through SMS or push notifications in addition to emails.
     - **Stimulus:** A developer adds an adapter to the Message Creator and Message Scheduler for the new protocol.
     - **Response:** Due to the modular design of the Communication Provider, new protocols are added as separate modules with minimal changes to the existing components.
@@ -40,7 +39,7 @@
 
 #### Dominik Mészáros
 
-2. ### Course Enrollment Provider external system API
+4. ### Course Enrollment Provider external system API
     #### Artifact
     - **Course Enrollment Provider**
     #### What is the source of modifiability and why?
@@ -87,9 +86,7 @@
     - **Current architecture status:** The application architecture supports high-load handling with proper conflict resolution mechanisms.
     - **Estimate:** **4 man-weeks** of rigorous testing.
 
-#### Dominik Mészáros
-
-4. ### Role-Specific Workflow Handling
+### Role-Specific Workflow Handling
     #### Artifact
     - **Course Enrollment Provider**
     #### Stimulus:
@@ -110,20 +107,6 @@
     #### Estimate:
     - **5 man-weeks**
         - of rigorous testing of edge-cases
-
----
-
-## **Interoperability**
-
-#### Ladislav Nagy
-
-1. **Scenario: Another university system wants to get access to the enrollment statistics data** - **FAILED**
-    - **Context:** The enrollment statistics need to be available for another university system.
-    - **Stimulus:** A developer wants to make the enrollment statistics data available for another sytem.
-    - **Response:** Because viewing and computation from the statistics is isolated from the logic that saves them this only requires changes in the statistics output part of the application, where this new system can be easily authenticated to get the data.
-    - **Response Measure:** The adding and testing of this feature should take the developer less than **10 hours**
-    - **Current architecture status:** The application architecure does not have the viewing of statistics split from their saving and the Enrollment logic which makes adding such a requirment much harder. Also how this should even be done is unclear from the architecture should we call the Enrollment Controller or some SIS API as shown in the statistics L3 diagram.
-    - **New architecture should solve the problem** - The logic of viewing and computing statistics and even the resources used for it should be in a separate container from the Enrollment logic and saving of the statistics data. So a Statistics Output Controller should be in the Statistics Provider container with Analytical Computing component to get the computed statistics and will take care of statistics output requests. The enrollment itself or the Logger provider can take care of saving the statistics into the statistics database.
 
 ---
 
@@ -160,16 +143,7 @@
     - **Stimulus:** A database server failure occurs during peak enrollment periods.
     - **Response:** The system automatically fails over to a replica database, ensuring uninterrupted service.
     - **Response Measure:** Failover occurs within a few **seconds**, with no noticeable impact on UX.
-
-#### Jirka Zelenka
-
-2. **Viewing of statistics not denied by Enrollment part failure** - **FAILED**
-    - **Context:** During the high intensity enrollment the demand is higher than expected and some part of the Enrollment system fails or is very slow to respond, when this happends the enrollment statistics are usefull to have more data to immediatelly adress the issue, this data can be needed by computer (for automatic scalling) or human.
-    - **Stimulus:** A system operator or the system itself wants to get the .
-    - **Response:** Because viewing and computation from the statistics is isolated from the logic that saves them the ability to get these statistics is not hindered by the slowness or failure of the Enrollment application part.
-    - **Response Measure:** There should be **0s** or no downtime to get the statistics when the Enrollment is overrequested.
-    - **Current architecture status:** The application architecure does not have the viewing of statistics split from their saving and the Enrollment logic which makes ugetting the needed data hard when the enrollment part is under problems.
-    - **New architecture should solve the problem** - The logic of viewing and computing statistics and even the resources used for it should be in a separate container from the Enrollment logic and saving of the statistics data. So a Statistics Output Controller should be in the Statistics Provider container with Analytical Computing component to get the computed statistics and will take care of statistics output requests. The enrollment itself or the Logger provider can take care of saving the statistics into the statistics database.
+    - **No new C4 is needed, only different technology** see the presentation where this issue is
 
 ---
 
@@ -202,3 +176,4 @@
     - **Stimulus:** Suspicious requests hit the Enrollment Controller, attempting to bypass input validation.
     - **Response:** The system includes a **Web Application Firewall (WAF)** at the entry point of the system, specifically in front of the API Gateway (SIS App API), to filter and block malicious requests before they reach the Enrollment Controller or other services.
     - **Response Measure:** 100% of known attack patterns are blocked, with alerts raised to the security team in real-time, and no data is compromised.
+    - **For the new C4 diagram** see the presentation where this issue is
