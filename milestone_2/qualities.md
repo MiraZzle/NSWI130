@@ -25,13 +25,13 @@
     - **Response:** Because application has one entry point where new API call can be easilly registered the developer can easily program the call logic separately and only register the call in one place.
     - **Response Measure:** The registration of the new call should be done under **1 hour**, this does not include the programing time of the logic of the call which can vary depending on the requirement and is not relevant here.
     - **Current architecture status:** The current application architecture doesn't have a single point of communication, which makes this impossible and makes adding API requests a much harder and time demanding task. (We are assuming the SIS component includes the frontend which makes the calls)
-    - **New architecture to solve the problem** - The Enrollment Controler should solely take care of the outside communication, the Course Enrollment Provider should also only communicate with the Enrollment Provider and not with the frontend directly.
-
-#### Pavel Kubát
+    - **New architecture to solve the problem** - The Enrollment Controler should solely take care of the outside communication, the Course Enrollment Provider should also only communicate with the Enrollment Provider and not with the frontend directly. **The new C4 diagram** can be found in the presentation
 
 ## **Modifiability**
 
-1. **Scenario: Adding a New Messaging Protocol (e.g., SMS or Push Notifications) - PASSED**
+#### Pavel Kubát
+
+1. **Scenario: Adding a New Messaging Protocol (e.g., SMS or Push Notifications) - **PASSED**
     - **Context:** A new requirement necessitates support for sending messages through SMS or push notifications in addition to emails.
     - **Stimulus:** A developer adds an adapter to the Message Creator and Message Scheduler for the new protocol.
     - **Response:** Due to the modular design of the Communication Provider, new protocols are added as separate modules with minimal changes to the existing components.
@@ -40,7 +40,7 @@
 
 #### Dominik Mészáros
 
-3. ### Course Enrollment Provider external system API
+2. ### Course Enrollment Provider external system API
     #### Artifact
     - **Course Enrollment Provider**
     #### What is the source of modifiability and why?
@@ -69,7 +69,7 @@
 
 #### Pavel Kubát
 
-1. **Scenario: Validating Complex Enrollment Conditions** - **PASSED**
+2. **Scenario: Validating Complex Enrollment Conditions** - **PASSED**
     - **Context:** New prerequisites require extensive testing to ensure correct validation under all edge cases.
     - **Stimulus:** Testers write automated tests for the Enrollment Validator to simulate diverse enrollment scenarios.
     - **Response:** The modular design of the Enrollment Validator allows isolated testing, with logs providing detailed insights into validation logic.
@@ -78,7 +78,7 @@
 
 #### Dominik Mészáros
 
-1. **Scenario: Course Enrollment Provider’s High-Load Handling** - **PASSED**
+3. **Scenario: Course Enrollment Provider’s High-Load Handling** - **PASSED**
 
     - **Context:** Concurrent enrollment requests are processed under high load conditions.
     - **Stimulus:** Tester simulates multiple students attempting concurrent enrollment in courses with limited seats.
@@ -89,7 +89,7 @@
 
 #### Dominik Mészáros
 
-2. ### Role-Specific Workflow Handling
+4. ### Role-Specific Workflow Handling
     #### Artifact
     - **Course Enrollment Provider**
     #### Stimulus:
