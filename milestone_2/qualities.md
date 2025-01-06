@@ -1,4 +1,5 @@
 # **Quality Scenarios**
+## **Improved C4 models can be found in the presentation**
 
 # Design-Time attributes
 
@@ -24,7 +25,7 @@
     - **Response:** Because application has one entry point where new API call can be easilly registered the developer can easily program the call logic separately and only register the call in one place.
     - **Response Measure:** The registration of the new call should be done under **1 hour**, this does not include the programing time of the logic of the call which can vary depending on the requirement and is not relevant here.
     - **Current architecture status:** The current application architecture doesn't have a single point of communication, which makes this impossible and makes adding API requests a much harder and time demanding task. (We are assuming the SIS component includes the frontend which makes the calls)
-    - **New architecture to solve the problem** - The Enrollment Controler and Communication provider should be one container which should solely take care of the outside communication, the Course Enrollment Provider should also only communicate with the Enrollment Provider and not with the frontend directly.
+    - **New architecture to solve the problem** - The Enrollment Controler should solely take care of the outside communication, the Course Enrollment Provider should also only communicate with the Enrollment Provider and not with the frontend directly.
 
 #### Pavel Kubát
 
@@ -160,7 +161,7 @@
     - **Response:** The system automatically fails over to a replica database, ensuring uninterrupted service.
     - **Response Measure:** Failover occurs within a few **seconds**, with no noticeable impact on UX.
 
-#### Ladislav Nagy (Jirka Zelenka)
+#### Jirka Zelenka
 
 2. **Viewing of statistics not denied by Enrollment part failure** - **FAILED**
     - **Context:** During the high intensity enrollment the demand is higher than expected and some part of the Enrollment system fails or is very slow to respond, when this happends the enrollment statistics are usefull to have more data to immediatelly adress the issue, this data can be needed by computer (for automatic scalling) or human.
